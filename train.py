@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 import torch
 from data . dataloader import MNIST_Loader
 from model.vae import VAE
