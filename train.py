@@ -84,9 +84,8 @@ def main():
 
     _ , model = train(conf)
 
-    model_name = WEIGHT_DIR / (conf['train_name']+'.pth')
-
-    torch.save(model.state_dict(), model_name)
+    model_path = WEIGHT_DIR / (conf['train_name']+'.pth')
+    torch.save(model.state_dict(), model_path)
 
 if __name__ == '__main__':
     main()
