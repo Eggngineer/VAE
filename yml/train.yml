@@ -4,7 +4,7 @@ train_name: 'base'
 
 roots : './data'
 weight : 'wb'
-yml : 'train.yml'
+yml : '/yml/train.yml'
 
 train : True
 downloads : True

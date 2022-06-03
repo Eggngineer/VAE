@@ -45,8 +45,6 @@ def train(conf):
 
     for epoch in range(epochs):
 
-        train_loss = 0
-
         for i, (x, labels) in enumerate(loader):
 
             x = x.to(device).view(-1, image_size).to(torch.float32)
@@ -81,7 +79,7 @@ def main():
     WEIGHT_DIR = WEIGHT_DIR / conf['weight']
     TRAIN_YML = TRAIN_YML / conf['yml']
 
-    loss, model = train(conf)
+    _ , model = train(conf)
 
 if __name__ == '__main__':
     main()
