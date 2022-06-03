@@ -58,8 +58,7 @@ def train(conf):
             optim.step()
 
             if (i+1) % 10 == 0:
-                wandb.log({'epoch':epoch+1, 'loss':loss})
-                # print(f'Epoch: {epoch+1}, loss: {loss: 0.4f}, reconstruction_loss: {recon_loss: 0.4f}, KL loss: {kl_loss: 0.4f}')
+                wandb.log({'epoch':epoch+1, 'loss':loss, 'recon_loss':recon_loss, 'kl_loss':kl_loss})
 
             losses.append(loss)
         wandb.save("vae.h5")
