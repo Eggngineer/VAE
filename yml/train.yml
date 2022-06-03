@@ -2,7 +2,7 @@ project_name: 'VAE'
 train_name: 'base'
 
 
-roots : '.'
+roots : './data'
 weight : 'wb'
 yml : 'train.yml'
 
