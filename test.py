@@ -60,9 +60,9 @@ def main():
     TEST_YML = TEST_YML / conf['yml']
 
     z, out = evals(conf=conf)
-    output_images = [wandb.Image(out[i],caption=str(z[i])) for i in range(len(out))]
-    
-    wandb.log({'output':output_images})
+    for i in range(len(out)):
+        output_images = wandb.Image(out[i],caption=str(z[i]))
+        wandb.log({'output':output_images})
 
 
 if __name__ == '__main__':
