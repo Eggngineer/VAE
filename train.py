@@ -80,7 +80,7 @@ def main():
     TRAIN_YML = BASE_DIR
 
     WEIGHT_DIR = WEIGHT_DIR / conf['weight']
-    if not WEIGHT_DIR.exist():
+    if not WEIGHT_DIR.exists():
         WEIGHT_DIR.mkdir()
     TRAIN_YML = TRAIN_YML / conf['yml']
 
