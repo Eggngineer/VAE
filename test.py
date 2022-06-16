@@ -42,7 +42,7 @@ def evals(conf):
     out = out.view(-1,28,28)
     out = out.cpu().detach().numpy()
 
-    return out
+    return z, out
 
 def main():
     config = load_yml('yml/test.yml')
@@ -59,8 +59,8 @@ def main():
     WEIGHT_DIR = WEIGHT_DIR / conf['weight']
     TEST_YML = TEST_YML / conf['yml']
 
-    out = evals(conf=conf)
-    output_images = [wandb.Image(out[i]) for i in range(len(out))]
+    z, out = evals(conf=conf)
+    output_images = [wandb.Image(out[i],caption=str(z[i])) for i in range(len(out))]
     
     wandb.log({'output':output_images})
 
